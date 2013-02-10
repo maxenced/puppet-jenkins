@@ -14,6 +14,8 @@
 #
 class jenkins::proxy {
     include apache
+    include apache::mod::proxy_http
+
     apache::vhost::proxy { 'jenkins':
         port       => 80,
         dest       => 'http://127.0.0.1:8080',
