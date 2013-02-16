@@ -16,6 +16,10 @@ class jenkins::package($version = 'installed') {
     ensure => present
   }
 
+  package { 'bundler':
+    ensure => present
+  }
+
   package { 'subversion':
     ensure => present
   }
