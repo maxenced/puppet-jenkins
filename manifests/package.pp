@@ -27,6 +27,8 @@ class jenkins::package($version = 'installed') {
 
   file { '/home/jenkins/.ssh/id_rsa':
     ensure  => file,
+    owner   => 'jenkins',
+    group   => 'jenkins',
     content => file('/etc/puppet/secrets/e2cbot.priv'),
     mode    => '0600'
   }
