@@ -8,6 +8,14 @@ class jenkins::package($version = 'installed') {
     ensure => present
   }
 
+  package { 'rpm':
+    ensure => present
+  }
+
+  package { 'rake':
+    ensure => present
+  }
+
   package { 'subversion':
     ensure => present
   }
