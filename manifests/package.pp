@@ -16,6 +16,10 @@ class jenkins::package($version = 'installed') {
     ensure => present
   }
 
+  package { 'ruby-eventmachine':
+    ensure => present
+  }
+
   package { 'bundler':
     ensure => present
   }
