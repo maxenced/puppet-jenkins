@@ -12,16 +12,18 @@ class jenkins::package($version = 'installed') {
     ensure => present
   }
 
-  package { 'rake':
+  package { 'rubygems':
     ensure => present
   }
 
-  package { 'ruby-eventmachine':
-    ensure => present
+  package { 'rake':
+    ensure   => present,
+    provider => 'gem'
   }
 
   package { 'bundler':
-    ensure => present
+    ensure   => present,
+    provider => 'gem'
   }
 
   package { 'subversion':
