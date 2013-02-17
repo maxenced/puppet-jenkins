@@ -30,6 +30,10 @@ class jenkins::package($version = 'installed') {
     ensure => present
   }
 
+  package { 'ruby1.9.1-full':
+    ensure => present
+  }
+
   file { '/home/jenkins':
     ensure  => directory,
     owner   => 'jenkins',
