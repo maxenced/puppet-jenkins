@@ -12,8 +12,14 @@ class jenkins::package($version = 'installed') {
     ensure => present
   }
 
-  package { 'rubygems':
-    ensure => present
+  if $::operatingsystem == 'Debian' {
+      package { 'rubygems':
+        ensure => present
+      }
+
+      package { 'ruby1.9.1-full':
+        ensure => present
+      }
   }
 
   package { 'rake':
@@ -27,10 +33,6 @@ class jenkins::package($version = 'installed') {
   }
 
   package { 'subversion':
-    ensure => present
-  }
-
-  package { 'ruby1.9.1-full':
     ensure => present
   }
 
