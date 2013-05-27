@@ -22,7 +22,7 @@ class jenkins::proxy {
         default_vhost => true,
         proxy_pass    => [{
             path      => '/',
-            url       => 'http://127.0.0.1:8080' }],
+            url       => 'http://127.0.0.1:8080/' }],
         servername    => $::fqdn
     }
 } # jenkins::proxy
