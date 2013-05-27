@@ -24,7 +24,7 @@ define jenkins::plugin($version=0) {
     group {
       'jenkins' :
         ensure => present;
-    } 
+    }
   }
 
   if (!defined(User['jenkins'])) {
@@ -46,8 +46,8 @@ define jenkins::plugin($version=0) {
   file {
     "$plugin_dir/$plugin" :
       require => Exec["download-${name}"],
-      owner   => 'jenkins',
-      mode    => 644,
+      owner   => 'root',
+      mode    => '0644',
       notify  => Service['jenkins']
   }
 }
