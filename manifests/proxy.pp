@@ -18,6 +18,7 @@ class jenkins::proxy {
 
     apache::vhost { 'jenkins':
         port          => 80,
+        docroot       => '/var/www',
         default_vhost => true,
         proxy_pass    => [{
             path      => '/',
